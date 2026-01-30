@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, main {
+  margin: 0;
+  padding: 0;
+  background: #989595;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+header {
+  background: url("Capa.png") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  bottom: 160px; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  text-decoration: none;
+  color: #333;
+  font-weight: 1000;
+  padding: 65px 65px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+li a  {
+
+}
