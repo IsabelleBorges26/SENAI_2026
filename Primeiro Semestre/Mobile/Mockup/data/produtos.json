@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "nome": "Camiseta regata",
+        "descricao": "Camiseta regata masculina",
+        "preco": 38.9,
+        "quantidade": 10,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiuS8hl3XjJ1rwYgPvrVXHZweCYxMiawf0VA&s"
+    },
+
+    {
+        "id": 2,
+        "nome": "Vestido longo",
+        "descricao": "Vestido longo azul",
+        "preco": 50.9,
+        "quantidade": 15,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaCvJVSjTCmTrcXh_jPLUoZpLy7Aoz9_Kevw&s"
+    },
+
+        {
+        "id": 3,
+        "nome": "Shorts",
+        "descricao": "Shorts masculino",
+        "preco": 45.54,
+        "quantidade": 5,
+        "img": "https://images.tcdn.com.br/img/img_prod/845685/short_praia_masculino_dcpearl_chino_classic_1365_1_6012eb05bda4ba2d3b734fa0367e8931.jpg"
+    },
+
+    {
+        "id": 4,
+        "nome": "Vestido curto",
+        "descricao": "Vestido curto rosa",
+        "preco": 65.9,
+        "quantidade": 9,
+        "img": "https://averarabrand.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/o/p/opvc1250.png"
+    },
+
+        {
+        "id": 5,
+        "nome": "Blusa",
+        "descricao": "Blusa masculina",
+        "preco": 30.9,
+        "quantidade": 5,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz_e51YeQgkX9croKTaX_wznXIk-6DCjNb5A&s"
+    },
+
+    {
+        "id": 6,
+        "nome": "Calsinha",
+        "descricao": "Calsinha verde",
+        "preco": 10.9,
+        "quantidade": 5,
+        "img": ""
+    },
+
+        {
+        "id": 7,
+        "nome": "Cueca",
+        "descricao": "Cueca preta",
+        "preco": 15.9,
+        "quantidade": 20,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXiWsNp_F33OULtYtmloKFNnpz-sb_-l2s2g&s"
+    },
+
+    {
+        "id": 8,
+        "nome": "Meia",
+        "descricao": "Meia azul",
+        "preco": 10.9,
+        "quantidade": 2,
+        "img": ""
+    },
+
+        {
+        "id": 9,
+        "nome": "Calça",
+        "descricao": "Calça masculina",
+        "preco": 80.9,
+        "quantidade": 20,
+        "img": ""
+    },
+
+    {
+        "id": 10,
+        "nome": "Calça jeans",
+        "descricao": "Calça jeans azul escuro",
+        "preco": 89.9,
+        "quantidade": 5,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHkNaYO6Not663KrlRaPJUv1UFHJ4LXEOZdg&s"
+    }
+]
