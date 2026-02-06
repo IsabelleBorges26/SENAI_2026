@@ -1,0 +1,9 @@
+instalar dependência prisma no node (as duas verificadas)
+dependência para instalar o prisma:
+npm i prisma @prisma/cliente
+
+para inicializar o prisma:
+npx prisma init --datasource-provider mysql
+
+comando para jogar as coisas no banco do sql
+npx prisma migrate dev
