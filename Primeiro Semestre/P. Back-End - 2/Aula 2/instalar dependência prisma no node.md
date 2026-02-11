@@ -7,3 +7,5 @@ npx prisma init --datasource-provider mysql
 
 comando para jogar as coisas no banco do sql
 npx prisma migrate dev
+
+instalar mais uma dependencia: npm i @prisma/adapter-mariadb

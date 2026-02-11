@@ -1,6 +1,4 @@
-const {PrismaClient} = require("@prisma/client");
-
-const prisma = new PrismaClient;
+const prisma = require("../data/prisma");
 
 const con = require("../data/connection");
 
@@ -14,33 +12,80 @@ const listarItens = async (req, res) => {
     }
 };
 
-const cadastrarItem = async (req, res) => {
-    try {
-        const { item, valor } = req.body;
+// const cadastrarItem = async (req, res) => {
+//     try {
+//         const { item, valor } = req.body;
 
-        const insert = "INSERT INTO lista (item, valor) VALUES (?, ?)";
+//         const insert = "INSERT INTO lista (item, valor) VALUES (?, ?)";
 
-        await con.query(insert, [item, valor]);
+//         await con.query(insert, [item, valor]);
 
-        res.status(201).end();
-    } catch (err) {
-        res.status(500).json(err);
-    }
-};
+//         res.status(201).end();
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// };
 
 const listaDois = async (req, res) => {
     try {
-        const lista = await prisma.lista.findMany();
+        const lista = await prisma.lista.findMany(); //localiza muitos
 
-        res.send.json(lista).status(200).end();
+        res.json(lista).status(200).end();
 
     }catch(err) {
         res.json(err).status(500).end();
     }
 };
 
+const cadastrarItem = async (req, res) => {
+    try {
+        const item = req.body;
+
+        const novoItem = await prisma.lista.create({
+            data: item
+        });
+
+        res.json(novoItem).status(202).end;
+    }catch(err) {
+        res.json(err).status(500).end();
+    }
+};
+
+const atualizarItem = async (req,res) => {
+    try {
+        const {id} = req.params;
+
+        const item = req.body;
+
+        const update = await prisma.lista.update({
+            where: { id: Number(id) },
+            data: item
+        });
+
+        res.json(update).status(200).end();
+    }catch(err) {
+        res.json(err).status(500).end();
+    }
+}
+
+const apagarItem = async (req, res) => {
+    try{
+        const {id} = req.params;
+
+        const excloi = await prisma.lista.delete({
+            where: {id: Number(id)}
+        });
+
+        res.json(excloi).status(200).end();
+    }catch (err) {
+        res.json(err).status(500).end();
+    }
+}
+
 module.exports = {
     listarItens,
     cadastrarItem,
-    listaDois
+    listaDois,
+    atualizarItem, 
+    apagarItem
 };
