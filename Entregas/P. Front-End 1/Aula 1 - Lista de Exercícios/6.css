@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* amarelo pastel mais forte do conjunto */
+    background: linear-gradient(135deg, #FFE082, #FFD54F);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #3A2E00;
+    text-align: center;
+}
+
+input {
+    width: 260px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #FFA000;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+button {
+    width: 260px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #FF8F00;
+    color: #2A2100;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #FB8C00;
+    transform: scale(1.03);
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #3A2E00;
+    font-weight: bold;
+    text-align: center;
+    width: 260px;
+}
