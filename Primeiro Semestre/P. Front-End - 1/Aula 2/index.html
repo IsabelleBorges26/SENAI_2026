@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Lojinha - Cdastro de Clientes</h1>
+        <h1>Lojinha - Cadastro de Clientes</h1>
         <button onclick="abrirModal()">+ Novo Cliente</button>
     </header>
     <main>
@@ -21,25 +21,25 @@
                     <th>Nascimento</th>
                     <th>Ações</th>
                 </tr>
-                <tbody id="dados"></tbody>
             </thead>
+
+        <tbody id="dados"></tbody>
         </table>
     </main>
     <!-- Modal -->
      <div id="modal" class="modal">
-        <div class="modal-content">
+        <form id = "cadCliente" class="modal-content">
             <h2>Novo Cliente</h2>
-
-            <input type="text" id="cpf" placeholder="CPF">
-            <input type="text" id="nome" placeholder="Nome">
-            <input type="text" id="spbrenome" placeholder="Sobrenome">
-            <input type="date" id="nascimento">
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="text" name="sobrenome" placeholder="Sobrenome" required>
+            <input type="date" name="nascimento" required>
 
             <div class="modal-buttons">
-                <button onclick="salvarCliente()">Salvar</button>
-                <button onclick="fecharModal()">Cancelar</button>
+                <button type="submit">Salvar</button>
+                <button type="reset" onclick="fecharModal()">Cancelar</button>
             </div>
-        </div>
+        </form>
      </div>
 <script src="script.js"></script>
 </body>
