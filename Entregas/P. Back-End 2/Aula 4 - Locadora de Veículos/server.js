@@ -9,10 +9,10 @@ app.use(express.json());
 app.use(cors());
 
 /* Importar e Implementar Rotas */
-const turmasRotas = require("./src/routes/turmas.routes");
-const alunosRotas = require("./src/routes/alunos.routes");
-app.use("/turmas", turmasRotas);
-app.use("/alunos", alunosRotas);
+const carrosRoutes = require("./src/routes/carros.routes");
+const clientesRoutes = require("./src/routes/clientes.routes");
+app.use("/carros", carrosRoutes);
+app.use("/clientes", clientesRoutes);
 /* Fim */
 
 const porta = process.env.PORT_APP || 3000;

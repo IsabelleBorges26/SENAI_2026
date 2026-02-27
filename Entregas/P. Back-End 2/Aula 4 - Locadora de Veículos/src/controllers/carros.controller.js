@@ -1,57 +1,41 @@
 const prisma = require("../data/prisma");
 
 const cadastrar = async (req, res) => {
-    const carro = req.body;
+    const data = req.body;
 
-    let carroPadrao = {};
-   
     //Placa obrigatória e padronizada
-    carroPadrao.placa = carro.placa.trim().replace("-", "").toUpperCase();
+    let placa = data.placa.trim().replace("-", "").replace(" ", "").toUpperCase();
+    if (placa.length != 7) {
+        return res.json({erro: "Placa Inválida"}).status(500).end();
+    } 
+    data.placa = placa;
 
     //Marca e modelo com primeira letra maiúscula
-    let marcaEmodelo = carro.marca && carro.modelo
-    let Estilo = marcaEmodelo.leght.trim().toLowerCase().split("")
-
-    //Ano do veículo deve ter 4 caracteres
-    let ano = carro.ano.leght.split("").typeof()
-
-    //Não permitir duplicidade de placa
-    let duplicidade = carro.placa
-
-    if (placa !== 7) {
-        res.status(400).json({ Message: "Não foi possivel cadastrar! Número da placa insuficiente." })
-    } else if (carro.marcamodelo == "") {
-        res.
-    } else {
-        const novoCarro = await prisma.data.create({
-            data: carro
-        })
-
-        res.json(novoCarro).status(200).end();
+    if (!data.marcamodelo) {
+        return res.json({erro: "Falta Marca e Modelo"}).status(500).end();
     }
 
-    
+    let infoCarro = data.marcamodelo.toLowerCase().split(" ");
 
+    data.marca = infoCarro[0];
+    data.modelo = infoCarro[1];
 
+    //Ano do veículo deve ter 4 caracteres
+    if (data.ano.toString().length != 4 && typeof(data.ano) == "number") {
+        return res.json({erro: "Ano Inválido"}).status(500).end();
+    }
 
-    // let novaplaca = data.placa.replace("-", "").leght;
+    delete data.marcamodelo;
 
-    // const novoano = 
-    // if (novaplaca == 7) {
-    //     const item = await prisma.modelo.create({
-    //         data})
-    // }
+    const item = await prisma.carros.create({
+        data
+    });
 
-    // const item = await prisma.alunos.create({
-    //     data
-    // });
-
-    // res.json(item).status(201).end();
-
+    res.json(item).status(201).end();
 };
 
 const listar = async (req, res) => {
-    const lista = await prisma.alunos.findMany();
+    const lista = await prisma.carros.findMany();
 
     res.json(lista).status(200).end();
 };
@@ -59,11 +43,8 @@ const listar = async (req, res) => {
 const buscar = async (req, res) => {
     const { id } = req.params;
 
-    const item = await prisma.alunos.findUnique({
+    const item = await prisma.carros.findUnique({
         where: { id: Number(id) },
-        include: { //substitui o innerjon, junta duas tabelas
-            turmas: true
-        }
     });
 
     res.json(item).status(200).end();
@@ -73,7 +54,7 @@ const atualizar = async (req, res) => {
     const { id } = req.params;
     const dados = req.body;
 
-    const item = await prisma.alunos.update({
+    const item = await prisma.carros.update({
         where: { id: Number(id) },
         data: dados
     });
@@ -84,7 +65,7 @@ const atualizar = async (req, res) => {
 const excluir = async (req, res) => {
     const { id } = req.params;
 
-    const item = await prisma.alunos.delete({
+    const item = await prisma.carros.delete({
         where: { id: Number(id) }
     });
 
