@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Movies 💫</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary-subtle">
+    <div class="container">
+        <a class="navbar-brand text-primary-emphasis"  href="#">Disney Movies</a>
+        <div class="navbar-nav">
+            <a href="#" class="btn w-100" style="background: #022669; " data-bs-theme="dark">+ Novo Filme</a>
+            <a href="#" class="btn w-100" style="background: #022669;" data-bs-theme="dark">Filtrar</a>
+            <a href="#" class="btn w-100" style="background: #022669;" data-bs-theme="dark">Limpar</a>
+        </div>
+    </div>
+    </nav>
+<header>
+</header>
+
+
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Capa</th>
+                    <th>Nome</th>
+                    <th>Gênero</th>
+                    <th>Ano</th>
+                    <th>Classificação</th>
+                    <th>Produtora</th>
+                </tr>
+            </thead>
+            <tbody id="dados"></tbody>
+        </table>
+    </main>
+    <!--Criar Modal-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Novo Filme</h2>
+            <input type="file" id="capa" accept="image/*">
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="text" id="genero" placeholder="Gênero">
+            <input type="date" id="ano"> 
+            <input type="text" id="classificacao" placeholder="Classificação">
+            <input type="text" id="produtora" placeholder="Produtora">
+ 
+
+            <div class="modal-buttons">
+                <button onclick="salvarFilme()">Salvar</button>
+                <button onclick="fecharModal()">Cancelar</button> 
+             
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
