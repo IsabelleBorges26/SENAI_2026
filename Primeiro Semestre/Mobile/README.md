@@ -11,6 +11,14 @@ Projetos mobile desenvolvidos com Flutter durante o curso.
 
 ---
 
+## 📂 Outros Projetos
+
+- 🔌 [Bitola Flutter](https://github.com/IsabelleBorges26/Bitola_Flutter)
+- 💰 [Investimento Flutter](https://github.com/IsabelleBorges26/Investimento_Flutter)
+- 🏦 [Financiamento Flutter](https://github.com/IsabelleBorges26/Financiamento_Flutter)
+
+---
+
 ## ▶️ Como executar
 
 ```bash
