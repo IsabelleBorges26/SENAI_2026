@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("https://loremflickr.com/1600/900/nature");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.caixa-maior {
+    background: black;
+    opacity: 0.85;
+    border-radius: 25px;
+    padding: 20px;
+    width: 100%;
+    color: aliceblue;
+}
+
+.input-cidade {
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #364b4b;
+    color: aliceblue;
+    width: calc(100% - 140px);
+}
+
+.botao-buscar {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #364b4b;
+    cursor: pointer;    
+    margin-left: 5px;
+}
+
+.botao-limpar {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #8b0000;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.card {
+    background: black;
+    opacity: 0.85;
+    border-radius: 25px;
+    padding: 20px;
+    width: 250px;
+    color: aliceblue;
+}
+
+.cidade {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.temp {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.caixa-menor {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.texto-previsao {
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.umidade {
+    margin-top: 10px;
+}
