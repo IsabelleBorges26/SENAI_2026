@@ -67,13 +67,15 @@ npm start
 
 ---
 
-## 📄 Documentações
+## 📦 Entrega
+
+Pasta destinada às atividades e projetos entregues aos professores.
 
 Contém:
 
-- Requisitos dos projetos  
-- Explicações técnicas  
-- Anotações do curso  
+- Trabalhos avaliativos  
+- Exercícios práticos  
+- Projetos finalizados  
 
 ---
 
