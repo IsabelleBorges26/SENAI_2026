@@ -7,10 +7,10 @@ Repositório contendo todos os projetos desenvolvidos durante o curso de Desenvo
 ## 📂 Estrutura do Repositório
 
 ```
+📁 Entregas
 📁 Mobile
 📁 P. Back-End - 2
 📁 P. Front-End - 1
-📁 Documentações
 ```
 
 ---
