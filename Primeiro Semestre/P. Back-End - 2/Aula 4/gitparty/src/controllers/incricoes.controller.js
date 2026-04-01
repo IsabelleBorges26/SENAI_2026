@@ -82,7 +82,7 @@ const excluir = async (req, res) => {
         );
 
         if (status !== "CONFIRMADO") {
-            return res.status(400).json(status); // ✔ usa retorno real
+            return res.status(400).json(status); 
         }
 
         await prisma.inscricoes.delete({
