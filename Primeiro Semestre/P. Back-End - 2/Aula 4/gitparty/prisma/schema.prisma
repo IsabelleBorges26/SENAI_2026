@@ -18,7 +18,7 @@ model Usuarios {
   email         String
   senha         String
   data_cadastro DateTime    @default(now())
-  inscricoes    Incricoes[]
+  inscricoes    Inscricoes[]
 }
 
 model Eventos {
@@ -29,7 +29,7 @@ model Eventos {
   local             String
   capacidade_maxima Int
   status            StatusEvento @default(ATIVO)
-  inscricoes        Incricoes[]
+  inscricoes        Inscricoes[]
 }
 
 enum StatusEvento {
@@ -38,9 +38,9 @@ enum StatusEvento {
   ENCERRADO
 }
 
-model Incricoes {
+model Inscricoes {
   id            Int             @id @default(autoincrement())
-  data_incricao DateTime        @default(now())
+  data_inscricao DateTime        @default(now())
   status        StatusInscricao @default(CONFIRMADA)
   usuarios      Usuarios        @relation(fields: [usuariosId], references: [id])
   usuariosId    Int
