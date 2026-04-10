@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestão de Eventos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Painel do Evento</h1>
+        <nav>
+            <button onclick="showSection('eventos')">Eventos</button>
+            <button onclick="showSection('usuarios')">Usuários</button>
+            <button onclick="showSection('inscricoes')">Inscrições</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="eventos" class="content-section">
+            <h2>Cadastrar Evento</h2>
+            <form>
+                <input type="text" placeholder="Nome do Evento">
+                <input type="date">
+                <input type="text" placeholder="Local">
+                <button type="submit" class="btn-save">Salvar Evento</button>
+            </form>
+
+            <h3>Lista de Eventos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Workshop Node.js</td>
+                        <td>10/05/2026</td>
+                        <td><button class="btn-delete">Excluir</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="usuarios" class="content-section" style="display:none;">
+            <h2>Cadastrar Usuário</h2>
+            <form>
+                <input type="text" placeholder="Nome Completo">
+                <input type="email" placeholder="E-mail">
+                <button type="submit" class="btn-save">Salvar Usuário</button>
+            </form>
+
+            <h3>Usuários Cadastrados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>João Silva</td>
+                        <td>joao@email.com</td>
+                        <td><button class="btn-delete">Excluir</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="inscricoes" class="content-section" style="display:none;">
+            <h2>Nova Inscrição</h2>
+            <form>
+                <select>
+                    <option value="">Selecione o Usuário</option>
+                </select>
+                <select>
+                    <option value="">Selecione o Evento</option>
+                </select>
+                <button type="submit" class="btn-save">Confirmar Inscrição</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
