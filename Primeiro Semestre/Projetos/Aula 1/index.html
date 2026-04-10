@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isa's Recipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Isa's Recipes</h1>
+    <button onclick="abrirModal()">+ Adicionar Receita</button>
+</header>
+
+<main>
+    <div id="dados" class="cards"></div>
+</main>
+
+<div id="modal" class="modal">
+    <form id="cadRceita" class="modal-content">
+        <h2>Nova Receita</h2>
+
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="tipo" placeholder="Tipo" required>
+        <input type="text" name="ingredientes" placeholder="Ingredientes" required>
+        <input type="text" name="modoFazer" placeholder="Modo de Fazer" required>
+        <input type="number" name="custoAproximado" placeholder="Custo Aproximado" required>
+        <input type="text" name="img" placeholder="URL da Imagem" required>
+
+        <div class="modal-buttons">
+            <button type="submit">Salvar</button>
+            <button type="button" onclick="fecharModal()">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
