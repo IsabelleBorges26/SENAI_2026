@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    background: url("fundo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #3a3a3a;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: 500;
+    color: #c86b85;
+}
+
+header button {
+    margin-top: 10px;
+    background: #e8aeb7;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+header button:hover {
+    background: #d998a2;
+}
+
+main {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #c86b85;
+    margin-bottom: 8px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oculto {
+    display: none;
+}
+
+.janela {
+    background: #fff;
+    padding: 24px;
+    border-radius: 14px;
+    width: 320px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 13px;
+    color: #666;
+}
+
+input, textarea, select {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 6px;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #e8aeb7;
+}
+
+button[type="submit"] {
+    background: #a8c7d8;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background: #f1c6d0;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    color: #777;
+}
+
+#imgReceita {
+    max-width: 100%;
+    max-height: 250px;
+    display: block;
+    margin: 10px auto;
+    object-fit: cover;
+}
+
+#detalhes .janela {
+    width: 400px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+#detalhes h2 {
+    color: #c86b85;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#detalhes img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#detalhes p {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+#detalhes input,
+#detalhes textarea,
+#detalhes select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#detalhes button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#detalhes button:nth-of-type(1) {
+    background: #a8c7d8;
+    color: white;
+}
+
+#detalhes button:nth-of-type(2) {
+    background: #e8aeb7;
+    color: white;
+}
+
+#detalhes button:nth-of-type(3) {
+    background: #ddd;
+}
