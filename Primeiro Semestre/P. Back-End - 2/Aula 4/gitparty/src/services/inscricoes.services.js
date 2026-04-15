@@ -9,7 +9,7 @@ const limiteInscricoes = async (eventosId) => {
     const numeroInscricoes = evento.inscricoes
         .filter(i => i.status === "CONFIRMADA").length;
 
-    if (numeroInscricoes >= evento.capacidade_maxima) { 
+    if (numeroInscricoes >= evento.capacidade_maxima) {
         return "LISTA_ESPERA";
     }
 
@@ -25,14 +25,14 @@ const inscricaoDuplicada = async (usuarioId, eventoId) => {
     const inscrito = evento.inscricoes
         .filter(i => i.usuariosId == usuarioId).length;
 
-    if (inscrito >= 1) { 
+    if (inscrito >= 1) {
         throw new Error("Usuário já inscrito no evento!");
     }
 };
 
 const prazoCancelamento = async (usuarioId, eventoId) => {
     const evento = await prisma.eventos.findUnique({
-        where: { id: eventoId } 
+        where: { id: eventoId }
     });
 
     const agora = new Date();
@@ -41,10 +41,10 @@ const prazoCancelamento = async (usuarioId, eventoId) => {
     const diferencaHoras = (dataEvento - agora) / (1000 * 60 * 60);
 
     if (diferencaHoras >= 24) {
-        return "CONFIRMADO"; 
+        return "CONFIRMADO";
     }
 
-    return "PRAZO_DE_CANCELAMENTO_EXPIRADO"; 
+    return "PRAZO_DE_CANCELAMENTO_EXPIRADO";
 };
 
 const listaEspera = async (eventoId) => {
@@ -77,7 +77,7 @@ const excluirEvento = async (eventoId) => {
         return "EVENTO_JA_ACONTECEU";
     }
 
-    if (evento.inscricoes.length > 0) { 
+    if (evento.inscricoes.length > 0) {
         return "EVENTO_TEM_PARTICIPANTES";
     }
 
@@ -95,7 +95,7 @@ const encerrarEvento = async (eventoId) => {
     if (agora > dataEvento) {
         await prisma.inscricoes.updateMany({
             where: {
-                eventosId: eventoId, 
+                eventosId: eventoId,
                 status: "LISTA_ESPERA"
             },
             data: {
@@ -108,7 +108,7 @@ const encerrarEvento = async (eventoId) => {
 module.exports = {
     limiteInscricoes,
     inscricaoDuplicada,
-    prazoCancelamento, 
+    prazoCancelamento,
     listaEspera,
     encerrarEvento,
     excluirEvento

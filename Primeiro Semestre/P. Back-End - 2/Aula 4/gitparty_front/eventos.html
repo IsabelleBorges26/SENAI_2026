@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Eventos</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="eventos.html">Eventos</a>
+    </nav>
+    <div class="container">
+        <button onclick="abrirModal()">+ Novo Evento</button>
+        <div id="listaEventos"></div>
+    </div>
+
+    <div id="modal">
+        <div id="modal-content">
+            <h3>Cadastrar Evento</h3>
+            <input id="titulo" placeholder="Título"><br>
+            <input id="descricao" placeholder="Descrição"><br>
+            <input id="local" placeholder="Local"><br>
+            <input id="data" type="date"><br>
+            <button onclick="cadastrarEvento()">Salvar</button>
+            <button onclick="fecharModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="eventos.js"></script>
+</body>
+
+</html>

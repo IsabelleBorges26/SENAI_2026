@@ -9,7 +9,7 @@ const cadastrar = async (req, res) => {
 
         const status = await limiteInscricoes(data.eventosId);
 
-        if (status) data.status = status; 
+        if (status) data.status = status;
 
         const item = await prisma.inscricoes.create({
             data
@@ -82,7 +82,7 @@ const excluir = async (req, res) => {
         );
 
         if (status !== "CONFIRMADO") {
-            return res.status(400).json(status); 
+            return res.status(400).json(status);
         }
 
         await prisma.inscricoes.delete({

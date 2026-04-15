@@ -1,86 +1,132 @@
-/* Configurações Gerais */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: #eef1f5;
+  color: #333;
 }
 
+/* HEADER */
 header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-nav button {
-    background: #555;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 4px;
+/* NAV */
+nav {
+  background: #0056b3;
+  padding: 12px;
+  text-align: center;
 }
 
-nav button:hover {
-    background: #777;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+  transition: 0.2s;
 }
 
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+nav a:hover {
+  color: #cce5ff;
 }
 
-/* Formulários */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 30px;
+/* CONTAINER */
+.container {
+  max-width: 950px;
+  margin: 25px auto;
+  padding: 20px;
 }
 
-input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* BOTÃO */
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
 }
 
-/* Tabelas */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+button:hover {
+  background: #0056b3;
+  transform: scale(1.03);
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+/* CARD EVENTO */
+.evento {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
 }
 
-th {
-    background-color: #f2f2f2;
+.evento:hover {
+  transform: translateY(-2px);
 }
 
-/* Botões de Ação */
-.btn-save {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+.evento span {
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.btn-delete {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
+/* LIXEIRA */
+.lixeira {
+  cursor: pointer;
+  color: #dc3545;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.lixeira:hover {
+  color: #a71d2a;
+}
+
+/* MODAL */
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+#modal-content {
+  background: #fff;
+  margin: 8% auto;
+  padding: 20px;
+  width: 380px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+/* IMAGEM */
+img {
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }

@@ -20,9 +20,9 @@ const listar = async (req, res) => {
 
 const buscar = async (req, res) => {
     const { id } = req.params;
-    
+
     const item = await prisma.eventos.findUnique({
-        where: { id : Number(id) }
+        where: { id: Number(id) }
     });
 
     res.json(item).status(200).end();
@@ -31,9 +31,9 @@ const buscar = async (req, res) => {
 const atualizar = async (req, res) => {
     const { id } = req.params;
     const dados = req.body;
-    
+
     const item = await prisma.eventos.update({
-        where: { id : Number(id) },
+        where: { id: Number(id) },
         data: dados
     });
 
@@ -42,9 +42,9 @@ const atualizar = async (req, res) => {
 
 const excluir = async (req, res) => {
     const { id } = req.params;
-    
+
     const item = await prisma.eventos.delete({
-        where: { id : Number(id) }
+        where: { id: Number(id) }
     });
 
     res.json(item).status(200).end();
