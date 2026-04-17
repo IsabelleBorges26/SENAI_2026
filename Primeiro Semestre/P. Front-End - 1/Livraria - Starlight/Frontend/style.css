@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1033, #2b1b4d);
+  color: white;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #120a25;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  color: #a78bfa;
+  font-size: 22px;
+}
+
+header nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #ccc;
+}
+
+header nav a:hover {
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 36px;
+  color: #c4b5fd;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #7c3aed;
+  color: white;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background: #5b21b6;
+}
+
+#listaProdutos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.produto {
+  background: #1f1b2e;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.produto h3 {
+  margin-bottom: 5px;
+  color: white;
+}
+
+.produto p {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.produto button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #a78bfa;
+  color: black;
+  cursor: pointer;
+}
+
+.produto button:hover {
+  background: #8b5cf6;
+  color: white;
+}
+
+.detalhes {
+  background: #1f1b2e;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 700px;
+  border-radius: 12px;
+  text-align: center;
+  display: none;
+}
+
+.detalhes img {
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #1f1b2e;
+  width: 90%;
+  max-width: 400px;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  color: #bbb;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: white;
+  cursor: pointer;
+}

@@ -49,6 +49,48 @@ imgEdit.addEventListener("input", () => {
     imgReceita.src = imgEdit.value;
 });
 
+function salvarEdicao() {
+    const receitaEditada = {
+        nome: nomeEdit.value,
+        tipo: tipoEdit.value,
+        ingredientes: ingredientesEdit.value,
+        modoFazer: modoEdit.value,
+        img: imgEdit.value,
+        custoAproximado: custoEdit.value ? Number(custoEdit.value) : null
+    };
+
+    fetch(url + '/receitas/' + receitaAtual.id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(receitaEditada)
+    })
+        .then(res => {
+            if (!res.ok) throw new Error();
+            return res.json();
+        })
+        .then(() => {
+            alert("Receita atualizada com sucesso!");
+            detalhes.classList.add('oculto');
+            carregarReceitas();
+        })
+        .catch(() => alert("Erro ao editar receita!"));
+}
+
+function excluirReceitaAtual() {
+    if (!confirm("Deseja excluir a receita")) return;
+    fetch(url + '/receitas/' + receitaAtual.id, {
+        method: 'DELETE'
+    })
+        .then(() => {
+            alert("Receita excluida com sucesso!");
+            detalhes.classList.add('oculto');
+            carregarReceitas();
+        })
+        .catch(() => alert("Erro ao excluir a receita"));
+}
+
 document.querySelector('#formCad').addEventListener('submit', function (e) {
     e.preventDefault();
     const novaReceita = {
