@@ -1,4 +1,4 @@
-const API_URL = "senai-2026.vercel.app";
+const API_URL = "https://senai-2026.vercel.app/api/produtos";
 
 async function carregarProdutos() {
   const response = await fetch(`${API_URL}/listar`);
