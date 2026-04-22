@@ -7,30 +7,28 @@ async function carregarProdutos() {
   const lista = document.getElementById("listaProdutos");
   lista.innerHTML = "";
 
-  produtos.forEach(prod => {
+  produtos.forEach(function (prod) {
     const div = document.createElement("div");
     div.classList.add("produto");
 
     div.innerHTML = `
-      <h3>${prod.nome}</h3>
-      <img src="${prod.img}" width="120">
-      <p>Preço: R$ ${prod.preco}</p>
-      <button onclick="mostrarDetalhes(${prod.id})">
-        Ver detalhes
-      </button>
-    `;
+            <img src="${prod.img}" alt="${prod.nome}">
+            <div class="produto-body">
+                <h3>${prod.nome}</h3>
+                <p>R$ ${prod.preco}</p>
+                <button onclick="mostrarDetalhes(${prod.id})">Ver detalhes</button>
+            </div>
+        `;
 
     lista.appendChild(div);
   });
 }
 
 async function mostrarDetalhes(id) {
-  if (!id) return alert("ID inválido");
-
   const response = await fetch(`${API_URL}/buscar/${id}`);
 
   if (!response.ok) {
-    alert("Produto não encontrado");
+    alert("Livro não encontrado");
     return;
   }
 
@@ -40,27 +38,27 @@ async function mostrarDetalhes(id) {
   detalhes.style.display = "block";
 
   detalhes.innerHTML = `
-    <h2>${prod.nome}</h2>
-    <img src="${prod.img}" width="200">
-    <p>Preço: R$ ${prod.preco}</p>
-    <p>Categoria: ${prod.categoria}</p>
-    <p>Marca: ${prod.marca}</p>
-  `;
+        <h2>${prod.nome}</h2>
+        <img src="${prod.img}" alt="${prod.nome}">
+        <p>Preço: <span>R$ ${prod.preco}</span></p>
+        <p>Categoria: <span>${prod.categoria}</span></p>
+        <p>Autor / Editora: <span>${prod.marca}</span></p>
+    `;
 }
 
 const modal = document.getElementById("modal");
 
-document.getElementById("btnAbrirModal").onclick = () => {
+document.getElementById("btnAbrirModal").onclick = function () {
   modal.style.display = "block";
 };
 
-document.getElementById("btnFecharModal").onclick = () => {
+document.getElementById("btnFecharModal").onclick = function () {
   modal.style.display = "none";
 };
 
 const form = document.getElementById("formProduto");
 
-form.addEventListener("submit", async (e) => {
+form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const formData = new FormData(form);
