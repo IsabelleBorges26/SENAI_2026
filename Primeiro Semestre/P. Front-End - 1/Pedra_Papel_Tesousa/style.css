@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/*reset básico*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #cc76d4;
+}
+
+.introducao{
+    margin-top: 40px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    border: solid 2px white;
+    height: 200px;
+}
+
+.introducao img{
+    padding: 20px;
+    width: 30%;
+    min-width: 150px;
+    border-radius: 30px;
+}
+
+.placar{
+    background-color: white;
+    width: 200px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score{
+    color: #671b6e;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.pontuacao{
+    font-size: 50px;
+    font-weight: bold;
+    color: #9f4fa7;
+}
+
+/*main*/
+
+.jogo{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    margin-top: 150px;
+    width: 100%;
+    max-width: 600px;
+    height: 30%;
+}
+
+.hexagono{
+    width: 70%;
+    opacity: 2.5;
+}
+
+.opcao{
+    padding: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 35px solid;
+    width: 250px;
+    height: 250px;
+    animation: opacidade 2s linear;
+    animation: rotatez 1s linear;
+}
+
+.opcao :hover{
+    animation: luzDeFundo 2s ease infinite;
+    cursor: pointer;
+}
+
+.test .test1{
+    border-radius: 50%;
+}
+
+.conteiner-papel{
+    position: absolute;
+    top: -130px;
+    left: -60px;
+}
+
+.conteiner-tesoura{
+    position: absolute;
+    top: -130px;
+    right: -60px;
+}
+
+.conteiner-pedra{
+    position: absolute;
+    bottom: -70px;
+}
+
+.opcao img{
+    width: 100px;
+    transition: 0.5s;
+}
+
+.opcao :hover{
+    transform: rotateY(360deg);
+}
+
+.papel{
+    border-color: #dd04ae;
+    box-shadow: 0px 7px 0px #eb31c3, inset 0px 7px #d6d6d6
+}
+
+.tesoura{
+    border-color: #04dd6d;
+    box-shadow: 0px 7px 0px #04dd6d, inset 0px 7px #d6d6d6
+}
+
+.pedra{
+    border-color: #ddd904;
+    box-shadow: 0px 7px 0px #ddd904, inset 0px 7px #d6d6d6
+}
+
+.regras{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: calc(50% - 235px);
+    top: 200px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    box-shadow: 0 0 0 3000px, rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.regras-titulo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
