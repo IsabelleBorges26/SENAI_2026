@@ -1,25 +1,370 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>GitParty - Sistema de Eventos</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GitParty - Eventos</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#62259b",
+                        "on-error": "#690005",
+                        "surface-tint": "#d0bcff",
+                        "outline": "#948e9e",
+                        "on-primary": "#3b0191",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-container-low": "#131b2e",
+                        "tertiary": "#f9bd22",
+                        "tertiary-container": "#7a5a00",
+                        "on-surface-variant": "#cbc3d5",
+                        "on-background": "#dae2fd",
+                        "surface-container-highest": "#2d3449",
+                        "secondary-fixed": "#f0dbff",
+                        "on-secondary-fixed-variant": "#62259b",
+                        "primary-fixed": "#e9ddff",
+                        "surface-bright": "#31394d",
+                        "surface-container": "#171f33",
+                        "on-primary-fixed-variant": "#522aa7",
+                        "surface": "#0b1326",
+                        "surface-container-high": "#222a3d",
+                        "primary": "#d0bcff",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "tertiary-fixed-dim": "#f9bd22",
+                        "surface-container-lowest": "#060e20",
+                        "on-tertiary-container": "#ffd47b",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "on-secondary": "#490081",
+                        "primary-fixed-dim": "#d0bcff",
+                        "surface-variant": "#2d3449",
+                        "on-secondary-container": "#d1a1ff",
+                        "secondary": "#ddb8ff",
+                        "surface-dim": "#0b1326",
+                        "on-primary-fixed": "#23005c",
+                        "on-surface": "#dae2fd",
+                        "inverse-surface": "#dae2fd",
+                        "secondary-fixed-dim": "#ddb8ff",
+                        "tertiary-fixed": "#ffdf9f",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#261a00",
+                        "background": "#0b1326",
+                        "inverse-primary": "#6b46c1",
+                        "inverse-on-surface": "#283044",
+                        "on-primary-container": "#e1d2ff",
+                        "primary-container": "#6b46c1",
+                        "outline-variant": "#494453",
+                        "on-tertiary": "#402d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["EB Garamond"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"]
+                      },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(45, 52, 73, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(192, 132, 252, 0.2);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 25px rgba(208, 188, 255, 0.25);
+            transform: translateY(-4px);
+        }
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #f9bd22;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 0.4; }
+            50% { transform: translateY(-20px); opacity: 0.8; }
+            100% { transform: translateY(0px); opacity: 0.4; }
+        }
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>GitParty</h1>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="eventos.html">Eventos</a>
-    </nav>
-    <div class="container">
-        <h2>Bem-vindo ao GitParty</h2>
-        <p>Gerencie seus eventos de forma simples e organizada.</p>
-        <button onclick="window.location.href='eventos.html'">Ver Eventos</button>
-    </div>
-</body>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+    
+    <main class="pt-12 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8 relative">
+            <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+                <div class="particle top-0 left-10 animate-float"></div>
+                <div class="particle top-20 left-40 animate-float delay-1000"></div>
+            </div>
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <h1 class="font-display-lg text-4xl md:text-5xl text-primary leading-tight">GitParty</h1>
+                </div>
+                <p class="font-headline-lg text-xl md:text-2xl italic text-on-surface-variant/80">Bem-Vindo ao sistema de festas a fantasia!</p>
+            </div>
+            <button class="flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-primary-container to-secondary-container text-on-primary-container font-bold font-label-caps text-label-caps rounded-xl shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-[1.02] group"
+                onclick="abrirModal()">
+                <span class="material-symbols-outlined text-tertiary group-hover:rotate-180 transition-transform duration-700">auto_fix_high</span>
+                Novo Evento
+            </button>
+        </header>
 
+        <div class="space-y-gutter">
+            <div class="flex justify-between items-end mb-8 border-b border-outline-variant/10 pb-4">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+                    Eventos cadastrados:
+                    <span id="contadorEventos" class="bg-primary/20 text-primary text-xs font-bold px-2.5 py-1 rounded-full border border-primary/20">0 cadastros</span>
+                </h2>
+            </div>
+            
+            <div id="listaEventos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-gutter">
+            </div>
+        </div>
+    </main>
+
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-20 opacity-40">
+        <div class="absolute w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -top-96 -left-48 animate-pulse"></div>
+        <div class="absolute w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] bottom-0 right-0"></div>
+    </div>
+
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm hidden" id="modal-overlay">
+        <div class="glass-card w-full max-w-lg rounded-2xl p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+            <h2 class="font-display-lg text-3xl text-primary mb-6">Adicionar Novo Evento</h2>
+            <form class="space-y-4" onsubmit="event.preventDefault();">
+                <div>
+                    <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                        id="titulo" placeholder="Título" type="text" required />
+                </div>
+                <div>
+                    <textarea class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                        id="descricao" placeholder="Descrição" rows="3" required></textarea>
+                </div>
+                <div>
+                    <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                        id="local" placeholder="Local" type="text" required />
+                </div>
+                <div>
+                    <label class="block text-xs font-label-caps text-primary/70 mb-1">DATA DO EVENTO</label>
+                    <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors font-body-md [color-scheme:dark]"
+                        id="data" type="date" required />
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-label-caps text-primary/70 mb-1">CAPACIDADE MÁXIMA</label>
+                        <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                            id="capacidade_maxima" placeholder="Ex: 150" type="number" min="1" required />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-label-caps text-primary/70 mb-1">INSCRIÇÕES INICIAIS</label>
+                        <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                            id="inscricoes" placeholder="Ex: 0" type="number" min="0" required />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-label-caps text-primary/70 mb-1">STATUS INICIAL</label>
+                    <select class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors font-body-md [color-scheme:dark]"
+                        id="status" required>
+                        <option value="Ativo" selected>Ativo</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Cancelado">Cancelado</option>
+                    </select>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <button class="flex-1 py-3 bg-gradient-to-br from-primary-container to-secondary-container text-on-primary-container font-bold font-label-caps text-label-caps rounded-xl hover:scale-[1.02] transition-transform shadow-lg"
+                        onclick="cadastrarEvento()" type="button">
+                        Salvar
+                    </button>
+                    <button class="flex-1 py-3 border border-outline-variant/30 text-on-surface-variant font-bold font-label-caps text-label-caps rounded-xl hover:bg-surface-variant/30 transition-colors"
+                        onclick="fecharModal()" type="button">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function formatarData(dataString) {
+            if(!dataString) return "Sem data";
+            const opcoes = { month: 'short', day: 'numeric', year: 'numeric' };
+            const data = new Date(dataString + 'T00:00:00'); 
+            return data.toLocaleDateString('pt-BR', opcoes);
+        }
+
+        async function carregarEventos() {
+            try {
+                const res = await fetch("http://localhost:3000/eventos/listar");
+                const eventos = await res.json();
+                
+                document.getElementById("contadorEventos").innerText = `${eventos.length} ACTIVE`;
+                const lista = document.getElementById("listaEventos");
+                lista.innerHTML = "";
+
+                if(eventos.length === 0) {
+                    lista.innerHTML = `<p class="col-span-2 text-center text-on-surface-variant/60 italic py-8">Nenhum evento evocado ainda...</p>`;
+                    return;
+                }
+
+                eventos.forEach(ev => {
+                    const capacidade = ev.capacidade_maxima || ev.capacidade || 0;
+                    const qtdInscritos = ev.inscricoes || ev.qtd_inscritos || 0;
+                    const statusAtual = ev.status || "Ativo";
+
+                    lista.innerHTML += `
+                    <div class="glass-card rounded-2xl p-6 glow-hover transition-all duration-500 group overflow-hidden relative flex flex-col h-full">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-secondary/5 rounded-full blur-2xl"></div>
+                        
+                        <button onclick="excluirEvento(event, ${ev.id})" class="absolute top-4 right-4 z-20 text-on-surface-variant/40 hover:text-error transition-colors bg-surface-container/50 p-2 rounded-full backdrop-blur-md" title="Excluir Evento">
+                            <span class="material-symbols-outlined text-sm">delete</span>
+                        </button>
+
+                        <div class="cursor-pointer flex-1" onclick="detalhes(${ev.id})">
+                            <div class="flex justify-between items-start gap-2 mb-2">
+                                <h3 class="font-headline-lg text-2xl text-secondary group-hover:text-primary transition-colors">${ev.titulo}</h3>
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${
+                                    statusAtual === 'Cancelado' ? 'bg-error/10 text-error border-error/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'
+                                }">${statusAtual.toUpperCase()}</span>
+                            </div>
+                            <p class="text-on-surface-variant text-body-sm mb-4 line-clamp-3">${ev.descricao || 'Sem descrição fornecida.'}</p>
+                            
+                            <div class="flex gap-4 mb-4 text-xs bg-surface-container-highest/20 p-2 rounded-lg">
+                                <div>
+                                    <span class="text-on-surface-variant/70 block text-[10px] uppercase">Inscrições</span>
+                                    <span class="text-on-surface font-medium">${qtdInscritos} / ${capacidade}</span>
+                                </div>
+                                <div class="w-full bg-surface-container shadow-inner h-1.5 rounded-full self-end mb-1">
+                                    <div class="bg-primary h-1.5 rounded-full" style="width: ${Math.min((qtdInscritos/capacidade)*100, 100)}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto pt-4 border-t border-outline-variant/10 flex justify-between items-center text-sm cursor-pointer" onclick="detalhes(${ev.id})">
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-[10px] text-primary/60 uppercase">Data</span>
+                                <span class="text-on-surface font-medium">${formatarData(ev.data_evento)}</span>
+                            </div>
+                            <div class="flex flex-col text-right">
+                                <span class="font-label-caps text-[10px] text-tertiary/60 uppercase">Local</span>
+                                <span class="text-on-surface font-medium">${ev.local}</span>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+            } catch (error) {
+                console.error("Erro ao carregar eventos:", error);
+            }
+        }
+
+        async function excluirEvento(event, id) {
+            event.stopPropagation();
+            if (confirm("Deseja realmente banir este evento do stardust?")) {
+                await fetch(`http://localhost:3000/eventos/excluir/${id}`, { method: "DELETE" });
+                carregarEventos();
+            }
+        }
+
+        async function cadastrarEvento() {
+            const titulo = document.getElementById("titulo").value;
+            const descricao = document.getElementById("descricao").value;
+            const local = document.getElementById("local").value;
+            const data = document.getElementById("data").value;
+            const capacidade_maxima = document.getElementById("capacidade_maxima").value;
+            const status = document.getElementById("status").value;
+            const inscricoes = document.getElementById("inscricoes").value;
+
+            if(!titulo || !descricao || !local || !data || !capacidade_maxima || !status || !inscricoes) {
+                alert("Preencha todos os campos mágicos para evocar o evento.");
+                return;
+            }
+
+
+            const evento = {
+                titulo: titulo,
+                descricao: descricao,
+                local: local,
+                data_evento: data,
+                capacidade_maxima: parseInt(capacidade_maxima),
+                status: status,
+                inscricoes: parseInt(inscricoes)
+            };
+
+            try {
+                await fetch("http://localhost:3000/eventos/cadastrar", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(evento)
+                });
+
+
+                document.getElementById("titulo").value = "";
+                document.getElementById("descricao").value = "";
+                document.getElementById("local").value = "";
+                document.getElementById("data").value = "";
+                document.getElementById("capacidade_maxima").value = "";
+                document.getElementById("status").value = "Ativo";
+                document.getElementById("inscricoes").value = "";
+
+                fecharModal();
+                carregarEventos();
+            } catch (error) {
+                console.error("Erro ao cadastrar evento:", error);
+                alert("Houve um erro na comunicação com o servidor.");
+            }
+        }
+
+        function abrirModal() { 
+            document.getElementById('modal-overlay').classList.remove('hidden'); 
+        }
+        function fecharModal() { 
+            document.getElementById('modal-overlay').classList.add('hidden'); 
+        }
+        
+        function detalhes(id) { 
+            window.location.href = `detalhes.html?id=${id}`; 
+        }
+
+        carregarEventos();
+    </script>
+</body>
 </html>
