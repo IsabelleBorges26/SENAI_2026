@@ -6,7 +6,7 @@ O **GitParty** é uma plataforma web voltada para o gerenciamento de festas a fa
 
 ## 📱 Telas
 
-| ![Listagem de Eventos](assets/Tela/1.png) | ![Cadastro de Evento](assets/Tela/2.png) | ![Detalhes do Evento](assets/Tela/3.png) |
+| ![Listagem de Eventos](assets/1.png) | ![Cadastro de Evento](assets/2.png) | ![Detalhes do Evento](assets/3.png) |
 | :---: | :---: | :---: |
 | *Página Inicial (Listagem)* | *Formulário de Invocação (Modal)* | *Detalhes Místicos e Galeria* |
 

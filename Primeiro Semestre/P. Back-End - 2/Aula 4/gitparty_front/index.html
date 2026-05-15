@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>GitParty - Eventos</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -81,7 +85,7 @@
                         "display-lg": ["EB Garamond"],
                         "body-md": ["Plus Jakarta Sans"],
                         "label-caps": ["Plus Jakarta Sans"]
-                      },
+                    },
                     "fontSize": {
                         "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
                         "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
@@ -98,15 +102,18 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glass-card {
             background: rgba(45, 52, 73, 0.15);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(192, 132, 252, 0.2);
         }
+
         .glow-hover:hover {
             box-shadow: 0 0 25px rgba(208, 188, 255, 0.25);
             transform: translateY(-4px);
         }
+
         .particle {
             position: absolute;
             width: 2px;
@@ -115,19 +122,33 @@
             border-radius: 50%;
             opacity: 0.6;
         }
+
         @keyframes float {
-            0% { transform: translateY(0px); opacity: 0.4; }
-            50% { transform: translateY(-20px); opacity: 0.8; }
-            100% { transform: translateY(0px); opacity: 0.4; }
+            0% {
+                transform: translateY(0px);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateY(-20px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 0.4;
+            }
         }
+
         .animate-float {
             animation: float 5s ease-in-out infinite;
         }
     </style>
 </head>
 
-<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
-    
+<body
+    class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+
     <main class="pt-12 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8 relative">
             <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -138,11 +159,14 @@
                 <div class="flex items-center gap-3 mb-4">
                     <h1 class="font-display-lg text-4xl md:text-5xl text-primary leading-tight">GitParty</h1>
                 </div>
-                <p class="font-headline-lg text-xl md:text-2xl italic text-on-surface-variant/80">Bem-Vindo ao sistema de festas a fantasia!</p>
+                <p class="font-headline-lg text-xl md:text-2xl italic text-on-surface-variant/80">Bem-Vindo ao sistema
+                    de festas a fantasia!</p>
             </div>
-            <button class="flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-primary-container to-secondary-container text-on-primary-container font-bold font-label-caps text-label-caps rounded-xl shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-[1.02] group"
+            <button
+                class="flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-primary-container to-secondary-container text-on-primary-container font-bold font-label-caps text-label-caps rounded-xl shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-[1.02] group"
                 onclick="abrirModal()">
-                <span class="material-symbols-outlined text-tertiary group-hover:rotate-180 transition-transform duration-700">auto_fix_high</span>
+                <span
+                    class="material-symbols-outlined text-tertiary group-hover:rotate-180 transition-transform duration-700">auto_fix_high</span>
                 Novo Evento
             </button>
         </header>
@@ -151,71 +175,85 @@
             <div class="flex justify-between items-end mb-8 border-b border-outline-variant/10 pb-4">
                 <h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
                     Eventos cadastrados:
-                    <span id="contadorEventos" class="bg-primary/20 text-primary text-xs font-bold px-2.5 py-1 rounded-full border border-primary/20">0 cadastros</span>
+                    <span id="contadorEventos"
+                        class="bg-primary/20 text-primary text-xs font-bold px-2.5 py-1 rounded-full border border-primary/20">0
+                        cadastros</span>
                 </h2>
             </div>
-            
+
             <div id="listaEventos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-gutter">
             </div>
         </div>
     </main>
 
     <div class="fixed inset-0 pointer-events-none overflow-hidden -z-20 opacity-40">
-        <div class="absolute w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -top-96 -left-48 animate-pulse"></div>
+        <div
+            class="absolute w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -top-96 -left-48 animate-pulse">
+        </div>
         <div class="absolute w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] bottom-0 right-0"></div>
     </div>
 
-    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm hidden" id="modal-overlay">
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm hidden"
+        id="modal-overlay">
         <div class="glass-card w-full max-w-lg rounded-2xl p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
             <h2 class="font-display-lg text-3xl text-primary mb-6">Adicionar Novo Evento</h2>
             <form class="space-y-4" onsubmit="event.preventDefault();">
                 <div>
-                    <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                    <input
+                        class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
                         id="titulo" placeholder="Título" type="text" required />
                 </div>
                 <div>
-                    <textarea class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                    <textarea
+                        class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
                         id="descricao" placeholder="Descrição" rows="3" required></textarea>
                 </div>
                 <div>
-                    <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                    <input
+                        class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
                         id="local" placeholder="Local" type="text" required />
                 </div>
                 <div>
                     <label class="block text-xs font-label-caps text-primary/70 mb-1">DATA DO EVENTO</label>
-                    <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors font-body-md [color-scheme:dark]"
+                    <input
+                        class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors font-body-md [color-scheme:dark]"
                         id="data" type="date" required />
                 </div>
-                
+
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-label-caps text-primary/70 mb-1">CAPACIDADE MÁXIMA</label>
-                        <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                        <input
+                            class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
                             id="capacidade_maxima" placeholder="Ex: 150" type="number" min="1" required />
                     </div>
                     <div>
                         <label class="block text-xs font-label-caps text-primary/70 mb-1">INSCRIÇÕES INICIAIS</label>
-                        <input class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
+                        <input
+                            class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 transition-colors font-body-md"
                             id="inscricoes" placeholder="Ex: 0" type="number" min="0" required />
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-label-caps text-primary/70 mb-1">STATUS INICIAL</label>
-                    <select class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors font-body-md [color-scheme:dark]"
+                    <select
+                        class="w-full bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors font-body-md [color-scheme:dark]"
                         id="status" required>
-                        <option value="Ativo" selected>Ativo</option>
-                        <option value="Pendente">Pendente</option>
-                        <option value="Cancelado">Cancelado</option>
+                        <option value="ATIVO" selected>Ativo</option>
+                        <option value="PENDENTE">Pendente</option>
+                        <option value="CANCELADO">Cancelado</option>
                     </select>
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button class="flex-1 py-3 bg-gradient-to-br from-primary-container to-secondary-container text-on-primary-container font-bold font-label-caps text-label-caps rounded-xl hover:scale-[1.02] transition-transform shadow-lg"
+                    <button
+                        class="flex-1 py-3 bg-gradient-to-br from-primary-container to-secondary-container text-on-primary-container font-bold font-label-caps text-label-caps rounded-xl hover:scale-[1.02] transition-transform shadow-lg"
                         onclick="cadastrarEvento()" type="button">
                         Salvar
                     </button>
-                    <button class="flex-1 py-3 border border-outline-variant/30 text-on-surface-variant font-bold font-label-caps text-label-caps rounded-xl hover:bg-surface-variant/30 transition-colors"
+                    <button
+                        class="flex-1 py-3 border border-outline-variant/30 text-on-surface-variant font-bold font-label-caps text-label-caps rounded-xl hover:bg-surface-variant/30 transition-colors"
                         onclick="fecharModal()" type="button">
                         Cancelar
                     </button>
@@ -226,22 +264,36 @@
 
     <script>
         function formatarData(dataString) {
-            if(!dataString) return "Sem data";
-            const opcoes = { month: 'short', day: 'numeric', year: 'numeric' };
-            const data = new Date(dataString + 'T00:00:00'); 
-            return data.toLocaleDateString('pt-BR', opcoes);
+            if (!dataString) return "Sem data";
+
+            try {
+                const data = new Date(dataString);
+
+                if (isNaN(data.getTime())) {
+                    return "Data inválida";
+                }
+
+                const dataLocal = new Date(data.getUTCFullYear(), data.getUTCMonth(), data.getUTCDate());
+
+                const opcoes = { day: '2-digit', month: 'short', year: 'numeric' };
+                return dataLocal.toLocaleDateString('pt-BR', opcoes);
+
+            } catch (e) {
+                console.error("Erro ao formatar:", e);
+                return "Erro na data";
+            }
         }
 
         async function carregarEventos() {
             try {
                 const res = await fetch("http://localhost:3000/eventos/listar");
                 const eventos = await res.json();
-                
+
                 document.getElementById("contadorEventos").innerText = `${eventos.length} ACTIVE`;
                 const lista = document.getElementById("listaEventos");
                 lista.innerHTML = "";
 
-                if(eventos.length === 0) {
+                if (eventos.length === 0) {
                     lista.innerHTML = `<p class="col-span-2 text-center text-on-surface-variant/60 italic py-8">Nenhum evento evocado ainda...</p>`;
                     return;
                 }
@@ -249,7 +301,7 @@
                 eventos.forEach(ev => {
                     const capacidade = ev.capacidade_maxima || ev.capacidade || 0;
                     const qtdInscritos = ev.inscricoes || ev.qtd_inscritos || 0;
-                    const statusAtual = ev.status || "Ativo";
+                    const statusAtual = ev.status || "ATIVO";
 
                     lista.innerHTML += `
                     <div class="glass-card rounded-2xl p-6 glow-hover transition-all duration-500 group overflow-hidden relative flex flex-col h-full">
@@ -262,9 +314,8 @@
                         <div class="cursor-pointer flex-1" onclick="detalhes(${ev.id})">
                             <div class="flex justify-between items-start gap-2 mb-2">
                                 <h3 class="font-headline-lg text-2xl text-secondary group-hover:text-primary transition-colors">${ev.titulo}</h3>
-                                <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${
-                                    statusAtual === 'Cancelado' ? 'bg-error/10 text-error border-error/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'
-                                }">${statusAtual.toUpperCase()}</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${statusAtual === 'CANCELADO' ? 'bg-error/10 text-error border-error/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'
+                        }">${statusAtual.toUpperCase()}</span>
                             </div>
                             <p class="text-on-surface-variant text-body-sm mb-4 line-clamp-3">${ev.descricao || 'Sem descrição fornecida.'}</p>
                             
@@ -274,7 +325,7 @@
                                     <span class="text-on-surface font-medium">${qtdInscritos} / ${capacidade}</span>
                                 </div>
                                 <div class="w-full bg-surface-container shadow-inner h-1.5 rounded-full self-end mb-1">
-                                    <div class="bg-primary h-1.5 rounded-full" style="width: ${Math.min((qtdInscritos/capacidade)*100, 100)}%"></div>
+                                    <div class="bg-primary h-1.5 rounded-full" style="width: ${Math.min((qtdInscritos / capacidade) * 100, 100)}%"></div>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +364,7 @@
             const status = document.getElementById("status").value;
             const inscricoes = document.getElementById("inscricoes").value;
 
-            if(!titulo || !descricao || !local || !data || !capacidade_maxima || !status || !inscricoes) {
+            if (!titulo || !descricao || !local || !data || !capacidade_maxima || !status || !inscricoes) {
                 alert("Preencha todos os campos mágicos para evocar o evento.");
                 return;
             }
@@ -325,46 +376,52 @@
                 local: local,
                 data_evento: data,
                 capacidade_maxima: parseInt(capacidade_maxima),
-                status: status,
+                status: status, // Aqui já virá em CAIXA ALTA devido ao value do HTML
                 inscricoes: parseInt(inscricoes)
             };
 
             try {
-                await fetch("http://localhost:3000/eventos/cadastrar", {
+                const response = await fetch("http://localhost:3000/eventos/cadastrar", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(evento)
                 });
 
+                if (response.ok) {
+                    // Reset dos campos
+                    document.getElementById("titulo").value = "";
+                    document.getElementById("descricao").value = "";
+                    document.getElementById("local").value = "";
+                    document.getElementById("data").value = "";
+                    document.getElementById("capacidade_maxima").value = "";
+                    document.getElementById("status").value = "ATIVO";
+                    document.getElementById("inscricoes").value = "";
 
-                document.getElementById("titulo").value = "";
-                document.getElementById("descricao").value = "";
-                document.getElementById("local").value = "";
-                document.getElementById("data").value = "";
-                document.getElementById("capacidade_maxima").value = "";
-                document.getElementById("status").value = "Ativo";
-                document.getElementById("inscricoes").value = "";
-
-                fecharModal();
-                carregarEventos();
+                    fecharModal();
+                    carregarEventos();
+                } else {
+                    const erro = await response.json();
+                    alert("Erro do servidor: " + (erro.error || "Tente novamente"));
+                }
             } catch (error) {
                 console.error("Erro ao cadastrar evento:", error);
                 alert("Houve um erro na comunicação com o servidor.");
             }
         }
 
-        function abrirModal() { 
-            document.getElementById('modal-overlay').classList.remove('hidden'); 
+        function abrirModal() {
+            document.getElementById('modal-overlay').classList.remove('hidden');
         }
-        function fecharModal() { 
-            document.getElementById('modal-overlay').classList.add('hidden'); 
+        function fecharModal() {
+            document.getElementById('modal-overlay').classList.add('hidden');
         }
-        
-        function detalhes(id) { 
-            window.location.href = `detalhes.html?id=${id}`; 
+
+        function detalhes(id) {
+            window.location.href = `detalhes.html?id=${id}`;
         }
 
         carregarEventos();
     </script>
 </body>
+
 </html>

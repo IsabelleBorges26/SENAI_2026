@@ -11,13 +11,12 @@ generator client {
 datasource db {
   provider = "mysql"
 }
-
 model Usuarios {
-  id            Int         @id @default(autoincrement())
+  id            Int          @id @default(autoincrement())
   nome          String
   email         String
   senha         String
-  data_cadastro DateTime    @default(now())
+  data_cadastro DateTime     @default(now())
   inscricoes    Inscricoes[]
 }
 
@@ -29,39 +28,44 @@ model Eventos {
   local             String
   capacidade_maxima Int
   status            StatusEvento @default(ATIVO)
-  inscricoes        Inscricoes[]
-  imagens   Imagem[]
+  inscricoes        Int          @default(0) 
+  lista_inscritos   Inscricoes[] 
+  imagens           Imagem[]
 }
 
 enum StatusEvento {
   ATIVO
   CANCELADO
   ENCERRADO
+  PENDENTE
 }
 
 model Inscricoes {
-  id            Int             @id @default(autoincrement())
+  id             Int             @id @default(autoincrement())
   data_inscricao DateTime        @default(now())
-  status        StatusInscricao @default(CONFIRMADA)
-  usuarios      Usuarios        @relation(fields: [usuariosId], references: [id])
-  usuariosId    Int
-  eventos       Eventos       @relation(fields: [eventosId], references: [id])
-  eventosId     Int
+  status         StatusInscricao @default(CONFIRMADA)
+  
+  usuarios       Usuarios        @relation(fields: [usuariosId], references: [id])
+  usuariosId     Int
+  
+  eventos        Eventos         @relation(fields: [eventosId], references: [id])
+  eventosId      Int
 }
 
 enum StatusInscricao {
   CONFIRMADA
   LISTA_ESPERA
   CANCELADA
+  PENDENTE
 }
 
 model Imagem {
-  id            Int        @id @default(autoincrement())
-  nomeOriginal  String
-  nomeArquivo   String
-  mimeType      String
-  path          String
-  data          DateTime   @default(now())
-  eventos   Eventos @relation(fields: [eventosId], references: [id])
-  eventosId Int
+  id           Int      @id @default(autoincrement())
+  nomeOriginal String
+  nomeArquivo  String
+  mimeType     String
+  path         String
+  data         DateTime @default(now())
+  eventos      Eventos  @relation(fields: [eventosId], references: [id])
+  eventosId    Int
 }

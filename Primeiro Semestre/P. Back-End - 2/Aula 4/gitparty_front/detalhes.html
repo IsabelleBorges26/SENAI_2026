@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>GitParty - Detalhes do Evento</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
   <style>
     body {
       background-color: #0b1326;
@@ -14,17 +18,21 @@
       -webkit-font-smoothing: antialiased;
       min-height: 100dvh;
     }
+
     .glass-card {
       background: rgba(23, 31, 51, 0.4);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(192, 132, 252, 0.15);
     }
+
     .magical-glow {
       box-shadow: 0 0 25px rgba(107, 70, 193, 0.3);
     }
+
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
+
     .firefly {
       position: absolute;
       width: 3px;
@@ -122,15 +130,20 @@
     }
   </script>
 </head>
+
 <body class="font-body-md text-body-md">
 
-  <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20">
+  <header
+    class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20">
     <div class="flex items-center gap-6">
       <div class="flex items-center gap-4">
-        <button onclick="window.location.href='index.html'" class="text-primary hover:text-tertiary transition-colors duration-300 flex items-center">
+        <button onclick="window.location.href='index.html'"
+          class="text-primary hover:text-tertiary transition-colors duration-300 flex items-center">
           <span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
         </button>
-        <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-widest drop-shadow-[0_0_8px_rgba(208,188,255,0.5)]">GitParty</h1>
+        <h1
+          class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-widest drop-shadow-[0_0_8px_rgba(208,188,255,0.5)]">
+          GitParty</h1>
       </div>
     </div>
   </header>
@@ -138,21 +151,29 @@
   <main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
     <section class="grid-cols-1 gap-gutter mb-16 flex flex-col lg:flex-row">
       <div class="space-y-gutter flex-1">
-        <div class="relative rounded-3xl overflow-hidden glass-card magical-glow min-h-[500px] flex flex-col justify-end p-8 md:p-16">
+        <div
+          class="relative rounded-3xl overflow-hidden glass-card magical-glow min-h-[500px] flex flex-col justify-end p-8 md:p-16">
           <div class="absolute inset-0 z-0">
-            <img alt="Night on the Bayou Event Hero" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQddvtQam6sfmeSCTQ2ASAesAe1zouOQivCPNyR6Ch1LUIjPl2siABLuGxS9aKrzSaCspZdDpv2K3BvwqgVHb2pvUJ9JN1aFnKoDHSwrRG-fT_RAbBcO4NFUvKDG2Z8Ymp_UZPRfKUnai4ZFihU8kLRzZHai9PEeh7ahJWPl86QEopACP0qPSB5nEdUGFyp6AQULLyOAYS3bRTaLcpeqisCcSAFZCsIasdQv2qquQVDqd2v38WCTezgUFsPlfbEP0gIygb57TanHoh"/>
+            <img alt="Night on the Bayou Event Hero" class="w-full h-full object-cover opacity-40"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQddvtQam6sfmeSCTQ2ASAesAe1zouOQivCPNyR6Ch1LUIjPl2siABLuGxS9aKrzSaCspZdDpv2K3BvwqgVHb2pvUJ9JN1aFnKoDHSwrRG-fT_RAbBcO4NFUvKDG2Z8Ymp_UZPRfKUnai4ZFihU8kLRzZHai9PEeh7ahJWPl86QEopACP0qPSB5nEdUGFyp6AQULLyOAYS3bRTaLcpeqisCcSAFZCsIasdQv2qquQVDqd2v38WCTezgUFsPlfbEP0gIygb57TanHoh" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
           </div>
           <div class="relative z-10 space-y-6 max-w-2xl">
-            <span class="inline-block px-4 py-1.5 bg-tertiary/20 text-tertiary border border-tertiary/30 rounded-full font-label-caps text-label-caps tracking-widest">Informações do Evento</span>
-            
-            <h2 id="titulo" class="font-display-lg text-[42px] md:text-[56px] leading-tight text-primary drop-shadow-lg">Carregando...</h2>
-            <p id="descricao" class="font-headline-lg italic text-secondary-fixed-dim text-xl leading-relaxed">Carregando descrição mística...</p>
-            
+            <span
+              class="inline-block px-4 py-1.5 bg-tertiary/20 text-tertiary border border-tertiary/30 rounded-full font-label-caps text-label-caps tracking-widest">Informações
+              do Evento</span>
+
+            <h2 id="titulo"
+              class="font-display-lg text-[42px] md:text-[56px] leading-tight text-primary drop-shadow-lg">Carregando...
+            </h2>
+            <p id="descricao" class="font-headline-lg italic text-secondary-fixed-dim text-xl leading-relaxed">
+              Carregando descrição mística...</p>
+
             <div class="flex flex-wrap gap-12 pt-6">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center">
-                  <span class="material-symbols-outlined text-tertiary text-3xl" data-icon="calendar_today">calendar_today</span>
+                  <span class="material-symbols-outlined text-tertiary text-3xl"
+                    data-icon="calendar_today">calendar_today</span>
                 </div>
                 <div>
                   <p class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Data do evento</p>
@@ -161,7 +182,8 @@
               </div>
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center">
-                  <span class="material-symbols-outlined text-tertiary text-3xl" data-icon="location_on">location_on</span>
+                  <span class="material-symbols-outlined text-tertiary text-3xl"
+                    data-icon="location_on">location_on</span>
                 </div>
                 <div>
                   <p class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Localização</p>
@@ -174,24 +196,29 @@
       </div>
 
       <aside class="space-y-gutter lg:w-[400px]">
-        <div class="glass-card rounded-3xl p-8 h-full flex flex-col justify-between border-dashed border-2 border-primary/20 relative overflow-hidden">
+        <div
+          class="glass-card rounded-3xl p-8 h-full flex flex-col justify-between border-dashed border-2 border-primary/20 relative overflow-hidden">
           <div class="space-y-4">
-            <div class="w-16 h-16 rounded-full bg-primary-container/30 flex items-center justify-center mb-6 magical-glow">
+            <div
+              class="w-16 h-16 rounded-full bg-primary-container/30 flex items-center justify-center mb-6 magical-glow">
               <span class="material-symbols-outlined text-primary text-4xl" data-icon="auto_awesome">auto_awesome</span>
             </div>
             <h3 class="font-headline-lg text-primary text-3xl">Upload de Imagens</h3>
-            <p class="text-on-surface-variant leading-relaxed">Compartilhe seus momentos encantados e trajes místicos com a corte. Suas imagens serão imortalizadas nos Arquivos.</p>
+            <p class="text-on-surface-variant leading-relaxed">Compartilhe seus momentos encantados e trajes místicos
+              com a corte. Suas imagens serão imortalizadas nos Arquivos.</p>
           </div>
           <div class="pt-8">
-            <input type="file" id="imagem" accept="image/*" class="hidden" onchange="uploadImagem()"/>
-            <button onclick="document.getElementById('imagem').click()" class="w-full relative group px-8 py-5 bg-gradient-to-r from-primary-container to-secondary-container rounded-2xl text-on-primary-container font-label-caps text-label-caps text-base flex items-center justify-center gap-3 hover:scale-[1.02] transition-all duration-300 magical-glow overflow-hidden shadow-xl">
+            <input type="file" id="imagem" accept="image/*" class="hidden" onchange="uploadImagem()" />
+            <button onclick="document.getElementById('imagem').click()"
+              class="w-full relative group px-8 py-5 bg-gradient-to-r from-primary-container to-secondary-container rounded-2xl text-on-primary-container font-label-caps text-label-caps text-base flex items-center justify-center gap-3 hover:scale-[1.02] transition-all duration-300 magical-glow overflow-hidden shadow-xl">
               <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <span class="material-symbols-outlined text-2xl" data-icon="cloud_upload">cloud_upload</span>
               Upload de Imagens
               <span class="firefly top-2 left-1/4 animate-pulse"></span>
               <span class="firefly bottom-3 right-1/4 animate-pulse" style="animation-delay: 1s"></span>
             </button>
-            <p class="text-center text-[10px] text-outline mt-4 uppercase tracking-[0.2em]">Max file size: 25MB • JPG, PNG, HEIC</p>
+            <p class="text-center text-[10px] text-outline mt-4 uppercase tracking-[0.2em]">Max file size: 25MB • JPG,
+              PNG, HEIC</p>
           </div>
           <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-tertiary/10 blur-[60px] rounded-full"></div>
         </div>
@@ -201,7 +228,7 @@
     <section class="mt-12">
       <h3 class="font-headline-lg text-primary text-3xl mb-6 border-b border-outline-variant/10 pb-4">Galeria</h3>
       <div id="listaImagens" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          </div>
+      </div>
     </section>
   </main>
 
@@ -210,86 +237,104 @@
     const id = urlParams.get("id");
 
     function formatarDataDetalhe(dataString) {
-        if(!dataString) return "Sem data";
-        const opcoes = { month: 'long', day: 'numeric', year: 'numeric' };
-        const data = new Date(dataString + 'T00:00:00'); 
-        return data.toLocaleDateString('pt-BR', opcoes);
+      if (!dataString) return "Sem data";
+
+      try {
+
+        const data = new Date(dataString);
+
+
+        if (isNaN(data.getTime())) {
+          return "Data inválida";
+        }
+
+
+        const dataLocal = new Date(data.getUTCFullYear(), data.getUTCMonth(), data.getUTCDate());
+
+        const opcoes = { day: 'numeric', month: 'long', year: 'numeric' };
+        return dataLocal.toLocaleDateString('pt-BR', opcoes);
+
+      } catch (e) {
+        console.error("Erro ao formatar data:", e);
+        return "Erro na data";
+      }
     }
 
     async function carregarDetalhes() {
-        if (!id) {
-            document.getElementById("titulo").innerText = "ID do Evento ausente";
-            return;
-        }
-        try {
-            const res = await fetch(`http://localhost:3000/eventos/buscar/${id}`);
-            const evento = await res.json();
-            
-            document.getElementById("titulo").innerText = evento.titulo || "Sem título";
-            document.getElementById("descricao").innerText = evento.descricao || "";
-            document.getElementById("local").innerText = evento.local || "Não informado";
-            document.getElementById("data").innerText = formatarDataDetalhe(evento.data_evento);
-            
-            carregarImagens();
-        } catch (error) {
-            console.error("Erro ao carregar detalhes:", error);
-            document.getElementById("titulo").innerText = "O ritual falhou ao conectar ao servidor.";
-        }
+      if (!id) {
+        document.getElementById("titulo").innerText = "ID do Evento ausente";
+        return;
+      }
+      try {
+        const res = await fetch(`http://localhost:3000/eventos/buscar/${id}`);
+        const evento = await res.json();
+
+        document.getElementById("titulo").innerText = evento.titulo || "Sem título";
+        document.getElementById("descricao").innerText = evento.descricao || "";
+        document.getElementById("local").innerText = evento.local || "Não informado";
+        document.getElementById("data").innerText = formatarDataDetalhe(evento.data_evento);
+
+        carregarImagens();
+      } catch (error) {
+        console.error("Erro ao carregar detalhes:", error);
+        document.getElementById("titulo").innerText = "O ritual falhou ao conectar ao servidor.";
+      }
     }
 
     async function uploadImagem() {
-        const fileInput = document.getElementById("imagem");
-        const file = fileInput.files[0];
-        if (!file) return;
+      const fileInput = document.getElementById("imagem");
+      const file = fileInput.files[0];
+      if (!file) return;
 
-        const formData = new FormData();
-        formData.append("imagem", file);
+      const formData = new FormData();
+      formData.append("imagem", file);
 
-        try {
-            const res = await fetch(`http://localhost:3000/imagem/cadastrar/${id}`, {
-                method: "POST",
-                body: formData
-            });
+      try {
+        const res = await fetch(`http://localhost:3000/imagem/cadastrar/${id}`, {
+          method: "POST",
+          body: formData
+        });
 
-            if (res.ok) {
-                alert("Imagem enviada com sucesso!");
-                fileInput.value = ""; 
-                carregarImagens();
-            } else {
-                const erro = await res.text();
-                alert("Erro ao enviar imagem: " + erro);
-            }
-        } catch (error) {
-            alert("Erro na requisição: " + error.message);
+        if (res.ok) {
+          alert("Imagem enviada com sucesso!");
+          fileInput.value = "";
+          carregarImagens();
+        } else {
+          const erro = await res.text();
+          alert("Erro ao enviar imagem: " + erro);
         }
+      } catch (error) {
+        alert("Erro na requisição: " + error.message);
+      }
     }
 
     async function carregarImagens() {
-        try {
-            const res = await fetch(`http://localhost:3000/imagem/buscar/${id}`);
-            const imagens = await res.json();
+      try {
+        const res = await fetch(`http://localhost:3000/imagem/buscar/${id}`);
+        const imagens = await res.json();
 
-            const lista = document.getElementById("listaImagens");
-            lista.innerHTML = "";
+        const lista = document.getElementById("listaImagens");
+        lista.innerHTML = "";
 
-            if(!imagens || imagens.length === 0) {
-                lista.innerHTML = `<p class="text-on-surface-variant/60 italic col-span-full py-4">Nenhuma recordação capturada nesta noite...</p>`;
-                return;
-            }
+        if (!imagens || imagens.length === 0) {
+          lista.innerHTML = `<p class="text-on-surface-variant/60 italic col-span-full py-4">Nenhuma recordação capturada nesta noite...</p>`;
+          return;
+        }
 
-            imagens.forEach(img => {
-                lista.innerHTML += `
+        imagens.forEach(img => {
+          lista.innerHTML += `
                   <div class="relative rounded-2xl overflow-hidden glass-card border border-primary/10 aspect-square group">
                     <img src="http://localhost:3000/${img.path}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Momento GitParty">
                   </div>
                 `;
-            });
-        } catch (error) {
-            console.error("Erro ao carregar imagens:", error);
-        }
+        });
+      } catch (error) {
+        console.error("Erro ao carregar imagens:", error);
+      }
     }
 
     carregarDetalhes();
   </script>
 </body>
+
 </html>
