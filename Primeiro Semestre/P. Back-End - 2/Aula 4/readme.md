@@ -8,7 +8,7 @@ O **GitParty** é uma plataforma web voltada para o gerenciamento de festas a fa
 
 | ![Listagem de Eventos](assets/1.png) | ![Cadastro de Evento](assets/2.png) | ![Detalhes do Evento](assets/3.png) |
 | :---: | :---: | :---: |
-| *Página Inicial (Listagem)* | *Formulário de Invocação (Modal)* | *Detalhes Místicos e Galeria* |
+| *Página Inicial* | *Formulário de Cadastro* | *Detalhes e Galeria* |
 
 ---
 
@@ -17,7 +17,6 @@ O **GitParty** é uma plataforma web voltada para o gerenciamento de festas a fa
 ### Frontend & Desenvolvimento
 * **HTML5 & CSS3:** Estruturação e estilização da interface web.
 * **JavaScript:** Utilizado para manipulação dinâmica e gerenciamento de modais e consumo assíncrono da API local via `fetch`.
-* **Google Project IDX:** Ambiente de desenvolvimento integrado (IDE) baseado em nuvem utilizado para acelerar a codificação e configuração do projeto.
 
 ### Backend & Persistência
 * **Node.js & Express:** Responsáveis por estruturar a API REST local (`http://localhost:3000`).
@@ -43,7 +42,7 @@ O backend suporta o ciclo completo de gerenciamento dos eventos. Os endpoints pr
 
 O processo de evolução da aplicação contou com engenharia de prompt para refinar o código e integrar os novos recursos. O direcionamento estrutural utilizado foi:
 
-> *"Crie o design de interface (UI/UX) para um sistema web chamado GitParty, uma plataforma de gerenciamento de festas à fantasia.
+> Crie o design de interface para um sistema web chamado GitParty, uma plataforma de gerenciamento de festas à fantasia.
 > 
 > O sistema deve conter duas telas principais:
 > 
@@ -65,7 +64,7 @@ O processo de evolução da aplicação contou com engenharia de prompt para ref
 > * Interface moderna, limpa e intuitiva (com efeitos hover de iluminação nos botões e cards).
 > 
 > **Público-alvo:**
-> * Entusiastas de festas à fantasia, organizadores e produtores de eventos temáticos."*
+> * Entusiastas de festas à fantasia, organizadores e produtores de eventos temáticos.
 
 ---
 
@@ -73,5 +72,5 @@ O processo de evolução da aplicação contou com engenharia de prompt para ref
 
 ### 1. Clonar o Repositório
 ```bash
-git clone [https://github.com/seu-usuario/gitparty.git](https://github.com/seu-usuario/gitparty.git)
+git clone https://github.com/seu-usuario/gitparty.git
 cd gitparty
